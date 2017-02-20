@@ -1,3 +1,5 @@
-task {
-  println 'hello World'
+node('master'){
+    stage('test'){
+        println 'Hello Jenkins File'
+    }
 }
