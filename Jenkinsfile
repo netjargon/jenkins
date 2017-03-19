@@ -4,6 +4,7 @@ node('master'){
         println 'Hello Jenkins File'
         println 'Testing git within Visual Studio Code'
         println 'Trying again'
+        println 'checking again'
     }
 }
 
