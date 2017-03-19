@@ -6,5 +6,9 @@ node('master'){
         println 'Trying again'
         println 'checking again'
     }
+    stage('docker build'){
+        println 'Building the docker container'
+        sh "docker build . "
+    }
 }
 
