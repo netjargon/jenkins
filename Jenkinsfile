@@ -8,7 +8,7 @@ node('master'){
     }
     stage('docker build'){
         println 'Building the docker container'
-        sh "docker build . "
+        sh "ls /"
     }
 }
 
