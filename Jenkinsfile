@@ -6,9 +6,9 @@ node('master'){
         println 'Trying again'
         println 'checking again'
     }
-    stage('docker build'){
+    stage('Android build'){
         println 'Building the docker container'
-        sh "ls /"
+        
     }
 }
 
