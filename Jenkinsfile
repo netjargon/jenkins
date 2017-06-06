@@ -18,7 +18,7 @@ node('master'){
     // }
     stage('Environment Testing'){
         sh "env > env.txt"
-        for (String i : readFile('env.text').split("\r?\n")) {
+        for (String i : readFile('env.txt').split("\r?\n")) {
             println i
         }
     }
