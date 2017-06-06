@@ -11,10 +11,16 @@ node('master'){
         
     }
 
-    stage('Nexus Artifact'){
-    	nexusArtifactUploader credentialsId: '1116cf17-90d7-44e5-aba7-d95ca6662541', groupId: 'docktest', nexusUrl: 'localhost:3032/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'thirdparty', version: '1'
+    // stage('Nexus Artifact'){
+    // 	nexusArtifactUploader credentialsId: '1116cf17-90d7-44e5-aba7-d95ca6662541', groupId: 'docktest', nexusUrl: 'localhost:3032/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'thirdparty', version: '1'
 
         
+    // }
+    stage('Environment Testing'){
+        sh "env > env.txt"
+        for (String i : readFile('env.text').split("\r?\n")) {
+            println i
+        }
     }
 
 }
