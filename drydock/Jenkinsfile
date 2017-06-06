@@ -14,6 +14,11 @@ node('master'){
    stage('Build Docker'){
        build 'docker'
    }
+   stage('Environment Testing'){
+        sh "env > env.txt"
+        for (String i : readFile('env.txt').split("\r?\n")) {
+            println i
+        }
     
     
 
