@@ -22,12 +22,6 @@ node('master'){
             println i
         }
     }
-    stage('Get All Variables'){
-    import hudson.model.*
     
-    def build = Thread.currentThread().executable;
-    println "docker: Build parameters: "+ build.getEnvVars();
-    }
-
 }
 
