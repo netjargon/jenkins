@@ -15,7 +15,7 @@ node('master'){
        build 'docker'
    }
     
-    }
+    
 
 }
 
