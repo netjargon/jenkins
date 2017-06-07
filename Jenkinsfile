@@ -22,6 +22,13 @@ node('master'){
             println i
         }
     }
+
+    stage('Docker'){
+
+        step([$class: 'CopyArtifact',
+                $projectName: 'docker',
+                $filter: output/**/docker.zip])
+    }
     
 }
 
