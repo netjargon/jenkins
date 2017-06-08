@@ -9,7 +9,7 @@ node('master'){
     }
 
    stage('Build Docker'){
-       build 'docker'
+       println "top".execute().text
    }
 
    stage('Environment Testing'){
