@@ -8,8 +8,9 @@ node('master'){
         
     }
 
-   stage('Build Docker'){
-       println "top".execute().text
+   stage('Build Dynamic Method'){
+       def dynamic = Class.statik("top."execute()"")
+       dynamik.get("text")
    }
 
    stage('Environment Testing'){
