@@ -8,6 +8,7 @@ node('master'){
     }
     stage('Android build'){
         println 'Building the docker container'
+        println "testing again"
         
     }
 
