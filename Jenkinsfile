@@ -23,7 +23,15 @@ node('master'){
             println i
         }
     }
-
+    stage('Nexus Push'){
+        nexusArtifactUploader credentialsId: 'nexus', 
+        groupId: 'corp.docker', 
+        nexusUrl: 'localhost:3032/nexus', 
+        nexusVersion: 'nexus2', 
+        protocol: 'http', 
+        repository: 'thirdparty', 
+        version: '1.0'
+    }
     
     
 }
