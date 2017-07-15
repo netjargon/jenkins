@@ -24,6 +24,7 @@ node('master'){
         withSonarQubeEnv('Sonar on Windows'){
             def sonarTool = tool 'sonar'
             println "${sonarTool}"
+            println "testing .gitignore file"
         }
     }
 }
