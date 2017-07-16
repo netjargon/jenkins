@@ -14,7 +14,7 @@ node('master'){
             
 
             dir('AntExample'){
-                    ant
+                   bat "ant"
                 }
             }
         }
