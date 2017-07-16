@@ -10,7 +10,7 @@ node('master'){
             println "testing .gitignore file"
 
             dir('AntExample'){
-                    ant ${sonarTool}
+                    ant "${sonarTool}"
                 }
             }
         }
