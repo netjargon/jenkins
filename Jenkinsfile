@@ -10,7 +10,7 @@ node('master'){
             
 
             dir('AntExample'){
-                    ant
+                    ant sonar
                 }
             }
         }
