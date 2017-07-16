@@ -16,3 +16,8 @@ node('master'){
             }
         }
     }
+    stage('Sonar Quality Gates'){
+        waitForQualityGate('AntExample'){
+            
+        }
+    }
