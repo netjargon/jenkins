@@ -21,7 +21,7 @@ node('master'){
     //     }
     // }
     stage('SonarQube Analysis'){
-        withSonarQubeEnv('Sonar on Windows'){
+        withSonarQubeEnv('sonar'){
             def sonarTool = tool 'sonar'
             println "${sonarTool}"
             println "testing .gitignore file"
