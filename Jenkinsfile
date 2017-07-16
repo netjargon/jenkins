@@ -19,7 +19,7 @@ node('master'){
     stage('Sonar Quality Gates'){
     timeout(time: 1, unit: 'MINUTES'){
         def qualityGate = waitForQualityGate()
-        if (qualityGate.status != 'OK'){
+        if (qualityGate.status != 'SUCCESS'){
             error "Pipeline aborted due to qualify gate failure: ${qualityGate.status}"
             }
         }
