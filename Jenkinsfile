@@ -9,5 +9,6 @@ node('master'){
             println "testing .gitignore file"
         }
     
-}
+    }
 
+}
