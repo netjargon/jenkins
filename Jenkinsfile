@@ -17,7 +17,8 @@ node('master'){
         }
     }
     stage('Sonar Quality Gates'){
-        waitForQualityGate(){
-            
+        def qualitygate = waitForQualityGate()
+        if (qualitygate != "OK"){
+            error "Cannot proceed, Quality Gate has failed"
         }
     }
