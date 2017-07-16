@@ -7,10 +7,10 @@ node('master'){
         withSonarQubeEnv('sonar'){
             def sonarTool = tool 'sonar'
             println "${sonarTool}"
-            println "testing .gitignore file"
+            
 
             dir('AntExample'){
-                    ant "${sonarTool}"
+                    ant sonar
                 }
             }
         }
