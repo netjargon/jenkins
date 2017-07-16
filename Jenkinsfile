@@ -11,7 +11,7 @@ node('master'){
         def sonarTool = tool 'sonar'
         withSonarQubeEnv('sonarQube Server'){
             dir('AntExample'){
-                ant sonarTool
+                bat "ant sonar"
             }
                     }
                 }
