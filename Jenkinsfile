@@ -5,8 +5,8 @@ node('master'){
         
      
         withSonarQubeEnv('sonar'){
-            def sonarTool = tool 'sonar'
-            println "${sonarTool}"
+            // def sonarTool = tool 'sonar'
+            // println "${sonarTool}"
             
 
             dir('AntExample'){
