@@ -8,8 +8,8 @@ node('master'){
         checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'b7a9e21ffc0d6874b83e9a9d7d507644', url: 'https://github.com/netjargon/jenkins.git']]]) 
         
         def sonarTool = tool 'sonar';
-        withSonarQubeEnv('sonar'){            
-          $sonarTool
+        withSonarQubeEnv('SonarQube Scanner'){            
+          
 
             }
         }
