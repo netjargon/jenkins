@@ -8,6 +8,10 @@ node('master'){
             def sonarTool = tool 'sonar'
             println "${sonarTool}"
             println "testing .gitignore file"
+
+            dir('AntExample'){
+                    ${sonarTool} ant sonar
+                }
             }
         }
         
