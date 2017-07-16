@@ -9,7 +9,7 @@ node('master'){
         
         def sonarTool = tool 'sonar';
         withSonarQubeEnv('sonar'){            
-          bat "${sonarTool}"
+          bat "sonar"
 
             }
         }
