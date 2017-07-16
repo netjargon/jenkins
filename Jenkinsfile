@@ -22,5 +22,8 @@ node('master'){
         if (qualityGate.status != 'SUCCESS'){
             error "Pipeline aborted due to qualify gate failure: ${qualityGate.status}"
             }
+        else{
+            println "Status is Success!"
+            }
         }
     }
