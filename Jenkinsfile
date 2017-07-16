@@ -5,17 +5,12 @@ node('master'){
     }
     stage('test'){
         ws('SonarTest'){
-            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'b7a9e21ffc0d6874b83e9a9d7d507644', url: 'https://github.com/netjargon/jenkins.git']]]) 
+        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'b7a9e21ffc0d6874b83e9a9d7d507644', url: 'https://github.com/netjargon/jenkins.git']]]) 
         
-     
-        withSonarQubeEnv('sonar'){
-            // def sonarTool = tool 'sonar'
-            // println "${sonarTool}"
-            
+        def sonarTool = tool 'sonar';
+        withSonarQubeEnv('sonar'){            
+          bat "${sonarTool}/bin/sonar-scanner.bat"
 
-            dir('AntExample'){
-                   bat "ant"
-                }
             }
         }
         
