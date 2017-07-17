@@ -1,8 +1,5 @@
 node('master'){
-    stage('Test Environment Variables'){
-        println "${env.ANT_HOME}"
-        println "${env.SONAR_HOME}"
-    }
+    
     stage('Sonar Analysis'){
     withEnv(['JAVA_HOME=C:\\Progra~2\\Java\\jdk1.8.0_111', 'ANT_HOME=C:\\opt\\ant']) {
     // some block
