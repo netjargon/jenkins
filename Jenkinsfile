@@ -16,21 +16,21 @@ node('master'){
             }
         }
     }
-    stage('Sonar Quality Gates'){
-//    timeout(time: 20, unit: 'SECONDS'){
-        def qualityGate = waitForQualityGate().status
-        println "${qualityGate}"
-        switch(qualityGate){
-                case qualityGate == 'SUCCESS':
-                println "Quality Gate is ${qualityGate}"
-                case qualityGate == 'OK':
-                println "Quality Gate is OK"
-                case qualityGate == 'PENDING':
-                println "QualityGate is PENDING and I don't know why"
-                case qualityGate == 'IN_PROGRESS':
-                println "Quality Gate is in progress and it is frustrating!"
-                default:
-                error "Quality Gate was not OK"
-            }
-        //}
-    }
+//     stage('Sonar Quality Gates'){
+// //    timeout(time: 20, unit: 'SECONDS'){
+//         def qualityGate = waitForQualityGate().status
+//         println "${qualityGate}"
+//         switch(qualityGate){
+//                 case qualityGate == 'SUCCESS':
+//                 println "Quality Gate is ${qualityGate}"
+//                 case qualityGate == 'OK':
+//                 println "Quality Gate is OK"
+//                 case qualityGate == 'PENDING':
+//                 println "QualityGate is PENDING and I don't know why"
+//                 case qualityGate == 'IN_PROGRESS':
+//                 println "Quality Gate is in progress and it is frustrating!"
+//                 default:
+//                 error "Quality Gate was not OK"
+//             }
+//         //}
+//     }
