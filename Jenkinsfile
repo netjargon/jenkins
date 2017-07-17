@@ -18,10 +18,10 @@ node('master'){
     }
     stage('Sonar Quality Gates'){
     timeout(time: 20, unit: 'SECONDS'){
-        def qualityGate = waitForQualityGate()
-        switch(qualityGate.status){
-                case qualityGate.status == 'OK':
-                println "Quality Gate is ${qualityGate.status}"
+        def qualityGate = waitForQualityGate().status
+        switch(qualityGate){
+                case qualityGate == 'OK':
+                println "Quality Gate is ${qualityGate}"
                 default:
                 error "Quality Gate was not OK"
             }
