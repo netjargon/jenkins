@@ -20,7 +20,7 @@ node('master'){
     timeout(time: 20, unit: 'SECONDS'){
         def qualityGate = waitForQualityGate().status
         switch(qualityGate){
-                case qualityGate == 'OK':
+                case qualityGate == 'SUCCESS':
                 println "Quality Gate is ${qualityGate}"
                 default:
                 error "Quality Gate was not OK"
