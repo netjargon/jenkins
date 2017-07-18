@@ -8,7 +8,7 @@ node('master'){
         }
     }
     stage('Archive Artifact'){
-        archiveArtifacts artifacts: 'AntExample.war', 
+        archiveArtifacts artifacts: '/dist/AntExample.war', 
         fingerprint: true, 
         onlyIfSuccessful: true
     }
