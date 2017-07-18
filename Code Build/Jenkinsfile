@@ -8,7 +8,7 @@ node('master'){
         }
     }
     stage('Archive Artifact'){
-        bat "dir"
+        println "testing web hooks"
         archiveArtifacts artifacts: 'SonarQube/AntExample/dist/AntExample.war', 
         fingerprint: true, 
         onlyIfSuccessful: true
