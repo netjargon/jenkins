@@ -1,0 +1,14 @@
+source 'https://rubygems.org'
+
+#encryptor is being used to encrypt the password for jobs.rb
+gem 'encryptor'
+
+gem 'jenkins_api_client'
+
+gem 'highline'
+
+gem 'openssl'
+
+gem 'aws-sdk'
+
+gem 'json', '~>2.1.0'
