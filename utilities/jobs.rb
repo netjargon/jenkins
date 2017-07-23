@@ -44,6 +44,8 @@ when "yes"
 
 when "no"
     puts "#{answer} is the answer and we will continue"
+else
+    puts "The answer is #{answer} but does not match the other options, we will not update config.yml"
 end
 
 jenkins = JenkinsApi::Client.new(config)
@@ -56,6 +58,6 @@ puts job.list_all
 puts "Enter the name of the job you want to run"
 jobName = gets.chomp
 
-puts "testing build job #{jobName}"
+puts "running the build job #{jobName}"
 job.build(jobName)
 
