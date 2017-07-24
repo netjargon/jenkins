@@ -1,8 +1,5 @@
 require 'jenkins_api_client'
 require 'highline/import'
-require 'encryptor'
-require 'openssl'
-require 'base64'
 
 config = YAML.load_file('config.yml')
 
