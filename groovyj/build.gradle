@@ -5,5 +5,5 @@ repositories {
 }
 
 dependencies {
-    compile group: 'com.offbytwo.jenkins:jenkins-client:0.3.7', name: 'jenkins-client', version: '0.3.7'
+    compile group: 'com.offbytwo.jenkins:jenkins-client:0.3.7', name: 'java-client-api', version: '0.3.7'
 }
