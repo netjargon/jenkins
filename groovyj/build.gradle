@@ -1,0 +1,9 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.offbytwo.jenkins:jenkins-client:0.3.7', name: 'jenkins-client', version: '0.3.7'
+}
