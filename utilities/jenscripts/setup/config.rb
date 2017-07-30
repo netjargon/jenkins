@@ -1,7 +1,7 @@
 require 'jenkins_api_client'
 require 'highline/import'
 
-config = YAML.load_file('config.yml')
+config = YAML.load_file('setup/config.yml')
 
 def get_password(prompt="Enter Password")
     ask(prompt) {|q| q.echo = false}
@@ -35,7 +35,7 @@ when "yes"
     config['server_port'] = server_port
 
 
-    File.open('config.yml', 'w') {
+    File.open('setup/config.yml', 'w') {
         |f| f.write config.to_yaml
     }
 

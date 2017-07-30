@@ -2,7 +2,7 @@ require_relative 'setup/config.rb'
 require 'jenkins_api_client'
 require 'highline/import'
 
-config = YAML.load_file('config.yml')
+config = YAML.load_file('setup/config.yml')
 
 
 
