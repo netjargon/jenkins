@@ -1,4 +1,4 @@
-require_relative 'config.rb'
+require_relative 'setup/config.rb'
 require 'jenkins_api_client'
 require 'highline/import'
 
