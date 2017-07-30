@@ -10,21 +10,24 @@ jenkins = JenkinsApi::Client.new(config)
 
 job = JenkinsApi::Client::Job.new(jenkins)
 
-puts "enter your password to test access to other files in program"
-password = get_password()
+puts "What would you like to do?"
+puts "Your choices are: run and delete"
 
-def delete_jobs
+choice = gets.chomp
+
+case choice
+
+when "delete"
+    puts job.list_all
+    puts "Select a job to delete"
+    jobName = gets.chomp
     job.delete(jobName)
+
+when "run"
+    puts job.list_all
+    puts "What job would you like to run?"
+    jobName = gets.chomp
+    job.build(jobName)
+else
+    puts "no selection was made"
 end
-
-puts "Here are a list of jobs that are currently available"
-puts job.list_all
-
-
-
-puts "Enter the name of the job you want to run"
-jobName = gets.chomp
-
-puts "running the build job #{jobName}"
-job.build(jobName)
-
