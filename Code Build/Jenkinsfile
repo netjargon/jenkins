@@ -22,4 +22,8 @@ node('master'){
         fingerprint: true, 
         onlyIfSuccessful: true
     }
+    stage('Pass Parameters'){
+        build job: 'sonarScan', parameters: [string(name: 'directory', value: 'path')]
+
+    }
 }
