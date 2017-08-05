@@ -1,7 +1,7 @@
 node('master'){
     directory = [antex: 'SonarQube/AntExample']
 
-    path = directory.get('antex')
+    folderstr = directory.get('antex')
 
     stage('Prep'){
         checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'b7a9e21ffc0d6874b83e9a9d7d507644', url: 'https://github.com/netjargon/jenkins.git']]])
@@ -23,7 +23,7 @@ node('master'){
         onlyIfSuccessful: true
     }
     stage('Pass Parameters'){
-        build job: 'sonarScan', parameters: [string(name: 'directory', value: 'path')]
+        build job: 'sonarScan', parameters: [string(name: 'directory', value: folderstr)]
 
     }
 }
