@@ -17,6 +17,6 @@ node('master'){
             }
         }
         stage('Build Code'){
-            build job: 'codeBuild', parameters: [string(name: 'paths', value: folderStr )]
+            build job: 'codeBuild', parameters: [string(name: 'folderStr', value: folderStr )]
         }
     }
