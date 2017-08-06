@@ -20,13 +20,15 @@ node('master'){
     stage('Sonar Quality Gates'){
 //    timeout(time: 20, unit: 'SECONDS'){
 
-        def qg = waitForQualityGate()
-        if (qg.status == 'OK'){
-            build job: 'codeBuild', parameters: [string(name: 'directory', value: folderstr)]
-        }
-        else {
-            error
-        }
+    waitForQualityGate()
+
+        // def qg = waitForQualityGate()
+        // if (qg.status == 'OK'){
+        //     build job: 'codeBuild', parameters: [string(name: 'directory', value: folderstr)]
+        // }
+        // else {
+        //     error
+        // }
      
         // switch (qualityGate) {
         //         case qualityGate == 'SUCCESS':
