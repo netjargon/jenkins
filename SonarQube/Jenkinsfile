@@ -4,7 +4,7 @@ node('master'){
     
     directory = [antex: 'SonarQube/AntExample', groovyj: 'groovyj']
 
-    directory.each { println it.key }
+    directory.each { folderStr = it.value }
     
     stage('Sonar Analysis'){
     withEnv(['JAVA_HOME=C:\\Progra~2\\Java\\jdk1.8.0_111', 'ANT_HOME=C:\\opt\\ant']) {
