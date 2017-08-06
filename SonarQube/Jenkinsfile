@@ -1,8 +1,16 @@
 node('master'){
+
+    class AppSelector {
+        String appName
+        String getAppName() {
+            return appName
+        }
+    }
+    
+    
     directory = [antex: 'SonarQube/AntExample', groovyj: 'groovyj']
 
-    folderStr = directory.get('antex')
-    groovyFldr = directory.get('groovyj')
+    
     
     stage('Sonar Analysis'){
     withEnv(['JAVA_HOME=C:\\Progra~2\\Java\\jdk1.8.0_111', 'ANT_HOME=C:\\opt\\ant']) {
