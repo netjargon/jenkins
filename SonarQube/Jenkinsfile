@@ -1,8 +1,11 @@
 node('master'){
-    newline = env.directory
+    directory = [antex: 'SonarQube/AntExample']
+
+    folderStr = directory.get('antex')
+    
     stage('Sonar Analysis'){
     withEnv(['JAVA_HOME=C:\\Progra~2\\Java\\jdk1.8.0_111', 'ANT_HOME=C:\\opt\\ant']) {
-        println newline
+        
     // some block
     ws('SonarTest'){
         checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'b7a9e21ffc0d6874b83e9a9d7d507644', url: 'https://github.com/netjargon/jenkins.git']]])    
@@ -16,7 +19,15 @@ node('master'){
     }
     stage('Sonar Quality Gates'){
 //    timeout(time: 20, unit: 'SECONDS'){
-        waitForQualityGate()
+
+        def qg = waitForQualityGate()
+        if (qg.status == 'OK'){
+            build job: 'codeBuild', parameters: [string(name: 'directory', value: folderstr)]
+        }
+        else {
+            error
+        }
+     
         // switch (qualityGate) {
         //         case qualityGate == 'SUCCESS':
         //         println "Quality Gate is #{qualityGate}"
