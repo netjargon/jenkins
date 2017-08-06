@@ -20,12 +20,13 @@ node('master'){
     stage('Sonar Quality Gates'){
 //    timeout(time: 20, unit: 'SECONDS'){
 
-        def gate = waitForQualityGate()
-        if(gate.status != "OK"){
-            error: "There was an error, please try again"
-        }
-        else {
-            println "Successful Gate"
+        waitUntil {
+            if (gate == 'PENDING'){
+                gate = waitForQualityGate()
+                return false 
+            } else {
+                return true
+            }
         }
 
         // def qg = waitForQualityGate()
