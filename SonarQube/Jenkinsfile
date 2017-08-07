@@ -4,7 +4,7 @@ node('master'){
     
     directory = [antex: 'SonarQube/AntExample', groovyj: 'groovyj']
 
-    directory.find { folderStr -> println "$folderStr.value"
+    directory.each { folderStr -> println "$folderStr.value"
 
     }
 
