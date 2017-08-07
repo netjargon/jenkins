@@ -4,9 +4,7 @@ node('master'){
     
     directory = [antex: 'SonarQube/AntExample', groovyj: 'groovyj']
 
-    directory.each { folderStr -> println "$folderStr.value"
-
-    }
+    folderStr = directory.get('antex')
 
     
     stage('Sonar Analysis'){
