@@ -4,7 +4,10 @@ node('master'){
     
     directory = [antex: 'SonarQube/AntExample', groovyj: 'groovyj']
 
-    directory.each { folderStr = it.value }
+    directory.find { folderStr -> println "$folderStr.value"
+
+    }
+
     
     stage('Sonar Analysis'){
     withEnv(['JAVA_HOME=C:\\Progra~2\\Java\\jdk1.8.0_111', 'ANT_HOME=C:\\opt\\ant']) {
@@ -19,7 +22,7 @@ node('master'){
                 }
             }
         }
-        stage('Build Code'){
-            build job: 'codeBuild', parameters: [string(name: 'folderStr', value: folderStr)]
-        }
+        // stage('Build Code'){
+        //     build job: 'codeBuild', parameters: [string(name: 'folderStr', value: folderStr)]
+        // }
     }
