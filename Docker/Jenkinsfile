@@ -9,6 +9,6 @@ node('master'){
 }
 
 def copy(){
-    step([$class: 'CopyArtifact', filter: '*.war', fingerprintArtifacts: true, projectName: 'multi/master', selector: [$class: 'StatusBuildSelector', stable: false], target: 'output'])
+    step([$class: 'CopyArtifact', fingerprintArtifacts: true, parameters: '*', projectName: 'multi/master', selector: [$class: 'StatusBuildSelector', stable: false], target: 'output'])
 
 }
