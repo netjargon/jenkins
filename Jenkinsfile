@@ -6,7 +6,11 @@ node('master'){
     }
     stage('Ant Build'){
         
+<<<<<<< HEAD
         dir('SonarQube/AntExample'){
+=======
+        dir('Code Build'){
+>>>>>>> integration
             withEnv(["ANT_HOME=C:\\opt\\ant", "JAVA_HOME=C:\\Progra~2\\Java\\jdk1.8.0_111"]){
                 "${ANT_HOME}\\bin\\ant"
             }
