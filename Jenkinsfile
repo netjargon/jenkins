@@ -20,8 +20,8 @@ node('master'){
         fingerprint: true, 
         onlyIfSuccessful: true
     }
-    stage('Pass Parameters'){
-        
+    stage('Docker Build'){
+        job: 'test'
 
     }
 }
