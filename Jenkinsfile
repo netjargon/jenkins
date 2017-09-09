@@ -1,11 +1,12 @@
-properties([[$class: 'CopyArtifactPermissionProperty', projectNames: 'test'], pipelineTriggers([])])
+
 
 
 node('master'){
-    
+    properties([[$class: 'CopyArtifactPermissionProperty', projectNames: 'test'], pipelineTriggers([])])
     
     stage('Prep'){
         checkout()
+        
     }
     stage('Ant Build'){
         
