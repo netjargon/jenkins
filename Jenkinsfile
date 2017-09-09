@@ -12,7 +12,7 @@ node('master'){
         
         dir('Code/AntExample'){
             withEnv(["ANT_HOME=/usr/local/bin/ant", "JAVA_HOME=/usr/bin/java"]){
-                "${ANT_HOME}" war
+                "${ANT_HOME}"
             }
         }
     }
@@ -20,7 +20,7 @@ node('master'){
         println "testing web hooks"
         println "testing webhooks"
         println "testing multibranch pipelines"
-        archiveArtifacts artifacts: 'Code/AntExample/dist/AntExample.war', 
+        archiveArtifacts artifacts: '*.war', 
         fingerprint: true, 
         onlyIfSuccessful: true
     }
