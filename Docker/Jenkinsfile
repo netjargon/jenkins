@@ -4,7 +4,7 @@ node('master'){
     }
 
     stage('Grab Artifact'){
-        step ([$Class: 'CopyArtifact',
+        step([$Class: 'CopyArtifact',
                 projectName: 'test',
                 filter: 'output/**/*.war']);
     }
