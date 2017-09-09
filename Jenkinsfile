@@ -7,8 +7,8 @@ node('master'){
     stage('Ant Build'){
         
         dir('Code/AntExample'){
-            withEnv(["ANT_HOME=C:\\opt\\ant", "JAVA_HOME=C:\\Progra~2\\Java\\jdk1.8.0_111"]){
-                "${ANT_HOME}\\bin\\ant"
+            withEnv(["ANT_HOME=C/usr/local/bin/ant", "JAVA_HOME=/usr/bin/java"]){
+                ant
             }
         }
     }
@@ -16,7 +16,7 @@ node('master'){
         println "testing web hooks"
         println "testing webhooks"
         println "testing multibranch pipelines"
-        archiveArtifacts artifacts: 'SonarQube/AntExample/dist/AntExample.war', 
+        archiveArtifacts artifacts: 'Code/AntExample/dist/AntExample.war', 
         fingerprint: true, 
         onlyIfSuccessful: true
     }
