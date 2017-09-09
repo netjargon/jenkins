@@ -21,7 +21,7 @@ node('master'){
         onlyIfSuccessful: true
     }
     stage('Docker Build'){
-        job: 'test', wait: false
+        build job: 'test', wait: false
 
     }
 }
