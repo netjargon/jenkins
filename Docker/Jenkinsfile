@@ -4,8 +4,11 @@ node('master'){
     }
 
     stage('Grab Artifact'){
-        step([$Class: 'CopyArtifact',
-                projectName: 'test',
-                filter: 'output/**/*.war']);
+        copy()
     }
+}
+
+def copy(){
+    step([$class: 'CopyArtifact', filter: '*', fingerprintArtifacts: true, projectName: 'multi/master', selector: [$class: 'StatusBuildSelector', stable: false], target: 'output'])
+
 }
