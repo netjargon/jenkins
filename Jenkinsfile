@@ -8,7 +8,7 @@ node('master'){
         
         dir('Code/AntExample'){
             withEnv(["ANT_HOME=C/usr/local/bin/ant", "JAVA_HOME=/usr/bin/java"]){
-                ${ANT_HOME}
+                "${ANT_HOME}"
             }
         }
     }
