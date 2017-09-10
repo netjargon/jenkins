@@ -9,7 +9,7 @@ node('master'){
 
     stage('Tomcat Docker Image'){
         def warMap = [:]
-        assert warMap = instanceOf map
+        
     }
 }
 
