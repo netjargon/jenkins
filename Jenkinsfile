@@ -20,7 +20,7 @@ node('master'){
         println "testing web hooks"
         println "testing webhooks"
         println "testing multibranch pipelines"
-        archiveArtifacts artifacts: 'Code/AntExample/antwar/*.war', 
+        archiveArtifacts artifacts: 'Code/AntExample/antwar/AntExample.war', 
         fingerprint: true, 
         onlyIfSuccessful: true
     }
