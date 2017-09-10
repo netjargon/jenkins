@@ -11,6 +11,7 @@ node('master'){
         def warMap = [:]
         warMap = [antwar: 'AntExample.war', ]
         println warMap.get('antwar')
+        sh "docker version"
         
     }
 }
