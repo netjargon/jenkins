@@ -10,7 +10,7 @@ node('master'){
     stage('Tomcat Docker Image'){
         def warMap = [:]
         warMap = [antwar: 'AntExample.war', ]
-        warMap.get('antwar')
+        println warMap.get('antwar')
         
     }
 }
