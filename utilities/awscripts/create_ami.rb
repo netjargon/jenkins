@@ -36,11 +36,17 @@ params = {}
 
     end
 
+    filters = [{
+        name: "name",
+        values: "pwhite",
+    },
+]
 
 $ec2Client.describe_images.each do |ami|
-    if ami.images.name.include?("pwhite")
+
+    if ami.include?(filters)
         params = {}
-        params[:image_ids] = ami.images.image_ids
+        params[:image_ids] = ami.image_ids
         puts "It is here"
     else
         puts "Lets get out, it is not found"
