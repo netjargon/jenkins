@@ -1,11 +1,14 @@
 require 'aws-sdk-ec2'
+require 'json'
 
 # ID that will be used to create the AMI i-020c1c36c6f828143
 
 $ec2 = Aws::EC2::Resource.new(region: 'us-east-1')
 $ec2Client = Aws::EC2::Client.new(region: 'us-east-1')
 
+file = File.read('launch_instance.json')
 
+data_hash = JSON.parse(file)
 
     
 params = {}
@@ -27,7 +30,7 @@ params = {}
     rescue Exception
 
         puts "Failed to create the image: #{$!}"
-        
+
     end
 
 
