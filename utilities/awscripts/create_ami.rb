@@ -10,6 +10,9 @@ file = File.read('launch_instance.json')
 
 data_hash = JSON.parse(file)
 
+puts data_hash
+
+
     
 params = {}
     $ec2.instances.each do |id|
@@ -18,7 +21,7 @@ params = {}
             params[:name] = id.key_name
             params[:dry_run] = "true"
         else 
-            puts "This is not the correct hash key and values, please continue"
+            
         end
     end
 
@@ -34,3 +37,12 @@ params = {}
     end
 
 
+$ec2Client.describe_images.each do |ami|
+    if ami.images.name.include?("pwhite")
+        params = {}
+        params[:image_ids] = ami.images.image_ids
+        puts "It is here"
+    else
+        puts "Lets get out, it is not found"
+    end
+end
