@@ -21,10 +21,13 @@ params = {}
 
     begin
         
-        puts params
+        puts "#{params.fetch(:name)}" + " " + "Will be used as the AMI name"
         $ec2Client.create_image(params)
+
     rescue Exception
+
         puts "Failed to create the image: #{$!}"
+        
     end
 
 
