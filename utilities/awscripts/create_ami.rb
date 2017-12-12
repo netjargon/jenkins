@@ -36,12 +36,6 @@ params = {}
 
     end
 
-    filters = [{
-        name: "name",
-        values: "pwhite",
-    },
-]
-
 ami = $ec2Client.describe_images({
     filters: [
         {
